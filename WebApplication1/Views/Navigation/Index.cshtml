@@ -12,5 +12,11 @@
         <a href="/Navigation/About">Go to About Page</a><br />
         <a href="/Navigation/ContactUs">Go to Contact Us Page</a>
     </div>
+     @{
+        var current = DateTime.Now.ToString("F");
+        }
+        <div>
+            <label>Current Date and Time: @current</label>
+        </div>
 </body>
 </html>

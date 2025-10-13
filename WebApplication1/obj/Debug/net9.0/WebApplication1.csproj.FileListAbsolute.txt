@@ -23,7 +23,7 @@ C:\Users\HP\MVC-.NET\WebApplication1\obj\Debug\net9.0\scopedcss\Views\Shared\_La
 C:\Users\HP\MVC-.NET\WebApplication1\obj\Debug\net9.0\scopedcss\bundle\WebApplication1.styles.css
 C:\Users\HP\MVC-.NET\WebApplication1\obj\Debug\net9.0\scopedcss\projectbundle\WebApplication1.bundle.scp.css
 C:\Users\HP\MVC-.NET\WebApplication1\obj\Debug\net9.0\compressed\sfr9826l73-b9sayid5wm.gz
-C:\Users\HP\MVC-.NET\WebApplication1\obj\Debug\net9.0\compressed\ixpe6lrf0h-61n19gt1b8.gz
+C:\Users\HP\MVC-.NET\WebApplication1\obj\Debug\net9.0\compressed\ixpe6lrf0h-o1wvxh70ph.gz
 C:\Users\HP\MVC-.NET\WebApplication1\obj\Debug\net9.0\compressed\9cuoy2kfs0-xtxxf3hu2r.gz
 C:\Users\HP\MVC-.NET\WebApplication1\obj\Debug\net9.0\compressed\19w17uh790-bqjiyaj88i.gz
 C:\Users\HP\MVC-.NET\WebApplication1\obj\Debug\net9.0\compressed\nxr65fp6ju-c2jlpeoesf.gz

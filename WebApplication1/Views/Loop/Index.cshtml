@@ -1,0 +1,98 @@
+@using Microsoft.AspNetCore.Mvc.Razor
+@using Microsoft.AspNetCore.Html
+@using System.Text
+
+@functions {
+    public static IHtmlContent MyList(string[] items)
+    {
+        var sb = new StringBuilder();
+
+        if (items == null || items.Length == 0)
+        {
+            sb.Append("<p><em>No items to display</em></p>");
+        }
+        else
+        {
+            sb.Append("<ul>");
+            foreach (var item in items)
+            {
+                sb.Append($"<li>{System.Net.WebUtility.HtmlEncode(item)}</li>");
+            }
+            sb.Append("</ul>");
+        }
+
+        return new HtmlString(sb.ToString());
+    }
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loop</title>
+</head>
+<body>
+    @if (DateTime.Now.Hour < 12)
+    {
+        <h2>Good Morning!</h2>
+    }
+    else if (DateTime.Now.Hour < 18)
+    {
+        <h2>Good Afternoon!</h2>
+    }
+    else
+    {
+        <h2>Good Evening!</h2>
+    }
+
+    <hr />
+
+    <div>
+        @(DateTime.Now.DayOfWeek == DayOfWeek.Sunday ? "Happy Weekend!" : "Have a nice day at work!")
+    </div>
+
+    <hr />
+
+    <div>
+        @{
+            var colors = new List<string> { "Red", "Teal", "Emerald", "Bottle Green", "Black", "White" };
+            foreach (var color in colors)
+            {
+                <p>@color</p>
+            }
+        }
+    </div>
+
+    <hr />
+
+    <div>
+        <h3>Number from 1 to 10</h3>
+        @for (int i = 1; i <= 10; i++)
+        {
+            <p>@i</p>
+        }
+    </div>
+
+    <hr />
+
+    <div>
+        <label>Example 1 - Name of Fruits</label>
+        @MyList(new string[] { "Apple", "Mango", "Grapes", "Peach", "Guava" })
+    </div>
+
+    <hr />
+
+    <div>
+        <label>Example 2 - Name of Nuts</label>
+        @MyList(new string[] { "Cashew Nut", "Pistachio", "Walnut", "Pine Nuts", "Almonds" })
+    </div>
+
+    <hr />
+
+    <div>
+        <label>Example 3 - Name of Sweets</label>
+        @MyList(new string[] { "Brownie", "Cake", "Cookies", "Ras Malai", "Donuts" })
+    </div>
+</body>
+</html>
