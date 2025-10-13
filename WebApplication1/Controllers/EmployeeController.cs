@@ -29,6 +29,6 @@ public class EmployeeController : Controller
         {
             profile = "No record found";
         }
-        return Content(profile);
+        return Content($"Details of Employee with ID: {id} — Name: {profile}");
     }
 }
