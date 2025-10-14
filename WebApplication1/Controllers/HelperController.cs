@@ -3,14 +3,10 @@ using Microsoft.AspNetCore.Mvc;
 using WebApplication1.Models;
 
 namespace WebApplication1.Controllers;
-public class LoopController : Controller
+public class HelperController : Controller
 {
     public IActionResult Index()
     {
         return View("Index");
-    }
-    public IActionResult YouTube()
-    {
-        return View("YouTube");
     }
 }

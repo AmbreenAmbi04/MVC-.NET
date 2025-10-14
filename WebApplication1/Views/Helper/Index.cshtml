@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Helper</title>
+</head>
+<body>
+    <div class= "container">
+        <h1>Helper Page</h1>
+        <p>This is the main helper page.</p>
+
+        @Html.ActionLink("Go to YouTube Page", "YouTube", "Helper")<br />
+        <hr />
+        @Html.TextBox("Sample TextBox", "Enter text here", null, new { id = "name", @class = "form-control"})<br />
+        @Html.Password("Sample Password", "Enter password here", null)<br />
+        @Html.CheckBox("Checkbox", false)<br />
+        <hr />
+        @Html.RadioButton("RadioButton", false)<br />
+        @Html.DropDownList("DropDown", new List<SelectListItem>
+        {
+            new SelectListItem { Text = "Option 1", Value = "Red" },
+            new SelectListItem { Text = "Option 2", Value = "Black" },
+            new SelectListItem { Text = "Option 3", Value = "White" }
+        }, "Select an option", null)<br />
+    </div>
+</body>
+</html>

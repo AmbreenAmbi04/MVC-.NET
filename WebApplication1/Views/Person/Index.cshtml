@@ -1,0 +1,26 @@
+@using WebApplication1.Models
+@model WebApplication1.Models.PersonModel
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Person</title>
+</head>
+<body>
+    <div class= "container">
+        <label>Person Page</label>
+        <p>This is the main person page.</p>
+        <hr />
+        @using (Html.BeginForm("Index", "Person", FormMethod.Post))
+        {
+             @Html.TextBoxFor(m => m.FirstName, new { @class = "form-control", placeholder = "Enter First Name" })<br />
+            @Html.TextBoxFor(m => m.LastName, new { @class = "form-control", placeholder = "Enter Last Name" })<br />
+            @Html.TextBoxFor(m => m.Address, new { @class = "form-control", placeholder = "Enter Address" })<br />
+            @Html.RadioButtonFor(m => m.isPresent, new { @class = "form-control", placeholder = "Enter If Person Present" })<br />
+            <input type="submit" value="Submit" class="btn btn-primary" />
+        }
+    </div>
+</body>
+</html>
