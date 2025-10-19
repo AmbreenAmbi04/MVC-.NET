@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+</head>
+<body>
+    <div class= "container">
+        <label>Form Page</label>
+        <p>This is the main form page.</p>
+        <hr />
+        <section>
+        @using (Html.BeginForm("PostUsingParameters", "Form", "FormMethod.Post"))
+        {
+            <input type= "text" name= "firstname" /><br /><br />
+            <input type= "text" name= "lastname" /><br /><br />
+            <button type="submit">Submit</button><br />
+        }
+        </section>
+        <section>
+        @using (Html.BeginForm("PostUsingRequest", "Form", "FormMethod.Post"))
+        {
+            <input type= "text" name= "firstname" /><br /><br />
+            <input type= "text" name= "lastname" /><br /><br />
+            <button type="submit">Submit</button><br />
+        }
+        </section>
+        <section>
+        @using (Html.BeginForm("PostUsingFormCollection", "Form", "FormMethod.Post"))
+        {
+            <input type= "text" name= "firstname" /><br /><br />
+            <input type= "text" name= "lastname" /><br /><br />
+            <button type="submit">Submit</button><br />
+        }
+        </section>
+        @using (Html.BeginForm("PostUsingBinding", "Form", "FormMethod.Post"))
+        {
+            @Html.TextBox("firstname")<br /><br />
+            @Html.TextBox("lastname")<br /><br />
+            <button type="submit">Submit</button><br />
+        }
+        </section>
+    </div>
+</body>
+</html>

@@ -5,4 +5,12 @@
 <div class="text-center">
     <h1 class="display-4">Welcome to Employee Data</h1>
     <p>This is your employee view.</p>
+    <hr />
+    <section>
+        @using (Html.BeginForm("SubmitEmployeeData", "Employee", FormMethod.Post))
+        {
+            <input type="text" name="employeeName" placeholder="Employee Name" /><br /><br />
+            <input type="email" name="employeeEmail" placeholder="Employee Email" /><br /><br />
+            <button type="submit">Submit Employee Data</button><br />
+        }
 </div>

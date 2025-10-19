@@ -1,0 +1,30 @@
+@using WebApplication1.Models
+@model WebApplication1.Models.PersonModel
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validation</title>
+</head>
+<body>
+    <div class= "container">
+        <label>Validation Page</label>
+        <p>This is the main validation page.</p>
+        <hr />
+        @using (Html.BeginForm("SubmitData", "Validation", FormMethod.Post))
+        {
+            <h2>First Name</h2><br />
+            @Html.TextBox("FirstName")<br /><br />
+            <h2>Last Name</h2><br />
+            @Html.TextBox("LastName")<br /><br />
+            <h2>Email</h2><br />
+            @Html.TextBox("Email")<br /><br />
+            <h2>Age</h2><br />
+            @Html.Editor("Age")<br /><br />
+            <input type="submit" value="Submit" class="btn btn-primary" /><br />
+        }
+    </div>
+</body>
+</html>
