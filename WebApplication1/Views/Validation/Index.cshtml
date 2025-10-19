@@ -1,5 +1,5 @@
 @using WebApplication1.Models
-@model WebApplication1.Models.PersonModel
+@model WebApplication1.Models.ValidationModel
 
 <!DOCTYPE html>
 <html lang="en">
@@ -7,24 +7,51 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Validation</title>
+
+    <!-- Optional: Bootstrap for better visuals -->
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
 </head>
 <body>
-    <div class= "container">
-        <label>Validation Page</label>
+    <div class="container mt-5">
+        <h2>Validation Page</h2>
         <p>This is the main validation page.</p>
         <hr />
+
         @using (Html.BeginForm("SubmitData", "Validation", FormMethod.Post))
         {
-            <h2>First Name</h2><br />
-            @Html.TextBox("FirstName")<br /><br />
-            <h2>Last Name</h2><br />
-            @Html.TextBox("LastName")<br /><br />
-            <h2>Email</h2><br />
-            @Html.TextBox("Email")<br /><br />
-            <h2>Age</h2><br />
-            @Html.Editor("Age")<br /><br />
-            <input type="submit" value="Submit" class="btn btn-primary" /><br />
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+            <div class="form-group mb-3">
+                <label>First Name</label>
+                @Html.TextBoxFor(x => x.FirstName, new { @class = "form-control" })
+                @Html.ValidationMessageFor(x => x.FirstName, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="form-group mb-3">
+                <label>Last Name</label>
+                @Html.TextBoxFor(x => x.LastName, new { @class = "form-control" })
+                @Html.ValidationMessageFor(x => x.LastName, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="form-group mb-3">
+                <label>Email</label>
+                @Html.TextBoxFor(x => x.Email, new { @class = "form-control" })
+                @Html.ValidationMessageFor(x => x.Email, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="form-group mb-3">
+                <label>Age</label>
+                @Html.EditorFor(x => x.Age, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(x => x.Age, "", new { @class = "text-danger" })
+            </div>
+
+            <input type="submit" value="Submit" class="btn btn-primary" />
         }
     </div>
+
+    <!-- ✅ REQUIRED SCRIPTS FOR VALIDATION -->
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
 </body>
 </html>

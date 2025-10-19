@@ -6,13 +6,18 @@ namespace WebApplication1.Controllers;
 
 public class ValidationController : Controller
 {
+    [HttpGet]
     public IActionResult Index()
     {
         return View();
     }
     [HttpPost]
-    public IActionResult SubmitData(ValidationController valid)
+    public IActionResult SubmitData(ValidationModel valid)
     {
-        return View();
+        if(ModelState.IsValid)
+        {
+            return View();
+        }
+        return View("Index", valid);
     }
 }
