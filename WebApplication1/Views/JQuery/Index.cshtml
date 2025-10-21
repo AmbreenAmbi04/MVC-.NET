@@ -12,8 +12,21 @@
         <div id="ready" class="mb-2 mt-2 text-green"></div>
         <button onclick="readyFunction()" class="btn btn-primary">Ready</button>
         <br /><br />
+
         <button onclick="GetData()" class="btn btn-primary">Get Data</button>
         <div id= "getdata" class="mb-2 mt-2 text-success fs-3 fw-semibold"></div>
+
+        <div class="container card p-3 mt-3">
+            <form>
+                <label class="form-label fw-bold fs-3 text-danger">Id: </label><br />
+                <input type="number" id="id" placeholder="Enter Id" class="form-control"/>
+                <label class="form-label fw-bold fs-3 text-danger">Name: </label><br />
+                <input type="text" id="name" placeholder="Enter Name" class="form-control"/>
+                <label class="form-label fw-bold fs-3 text-danger">Age: </label><br />
+                <input type="number" id="age" placeholder="Enter Age" class="form-control"/><br />
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
     </div>
     <script>
         $(document).ready(function () {
