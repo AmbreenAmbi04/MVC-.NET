@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <title>JQuery</title>
+</head>
+<body>
+    <div class= "container">
+        <h2>This is JQuery</h2>
+        <div id="ready" class="mb-2 mt-2 text-green"></div>
+        <button onclick="readyFunction()" class="btn btn-primary">Ready</button>
+        <br /><br />
+        <button onclick="GetData()" class="btn btn-primary">Get Data</button>
+        <div id= "getdata" class="mb-2 mt-2 text-success fs-3 fw-semibold"></div>
+    </div>
+    <script>
+        $(document).ready(function () {
+            alert("JQuery is working!");
+        });
+
+        function readyFunction() {
+            $("#ready").html("You clicked the Ready button!");
+        }
+
+        function GetData()
+        {
+            $.ajax({
+                url: '/JQuery/GetData',
+                accepts: 'application/json',
+                type: 'GET',
+                success: function (data) {
+                    $("#getdata").html("ID: " + data.id + "<br>Name: " + data.name + "<br>Age: " + data.age);
+                },
+                error: function (err)
+                {
+                    alert("Error: " + err.responseText);
+                }
+            })
+        }
+    </script>
+</body>
+</html>
